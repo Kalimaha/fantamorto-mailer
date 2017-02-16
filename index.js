@@ -1,33 +1,14 @@
 const express     = require('express')
 const app         = express()
-const nodemailer  = require('nodemailer')
-
-const transporter = nodemailer.createTransport({
-  service: 'Gmail',
-  auth: {
-    user: 'fantamorto.online@gmail.com',
-    pass: 'Fantamorto2017'
-  }
-})
-const from = 'fantamorto.online@gmail.com'
-const to = 'guido.barbaglia@gmail.com'
-
+const path        = require('path');
+const mailer      = require(path.resolve(__dirname, './mailer.js'))
 
 app.set('port', (process.env.PORT || 5000));
 
-app.get('/', function (req, res) {
-  // res.send('Hello World!')
-  const text = '<h1>Hello world from</h1>';
-  const mailOptions = {
-    from: from,
-    to: to,
-    subject: 'Email Example',
-    html: text
-  }
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error)  { res.send(error) }
-    else        { res.send('Message sent.') }
-  })
+app.get('/', (req, res) => {
+  mailer.send('guido.barbaglia@gmail.com')
+    .then(() => res.sendStatus(200))
+    .catch((err) => res.send(err))
 })
 
 app.listen(app.get('port'), function() {
