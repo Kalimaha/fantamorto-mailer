@@ -1,0 +1,14 @@
+{
+  "name": "fantamorto-mailer",
+  "version": "0.0.1",
+  "description": "Back-end application to approve new Fantamorto users.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Kalimaha",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
+}
