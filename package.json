@@ -10,6 +10,8 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.14.1",
+    "firebase": "^3.6.9",
+    "firebase-admin": "^4.1.1",
     "nodemailer-promise": "^1.0.3",
     "sendmail": "^1.1.1"
   }
