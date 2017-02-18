@@ -1,10 +1,10 @@
 const firebase        = require('firebase-admin')
 const firebase_config = {
-  databaseURL: 'https://fantamorto-4f1ad.firebaseio.com',
+  databaseURL: process.env.FANTAMORTO_DB_URL,
   credential: firebase.credential.cert({
-    projectId: 'fantamorto-4f1ad',
-    clientEmail: 'firebase-adminsdk-v2pfc@fantamorto-4f1ad.iam.gserviceaccount.com',
-    privateKey: '-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCwRruAFL5h7eOZ\n/xAZHIcsLmfJ9AYDLdsj8Nmff2vzIHC9QLDy7mGgKq/WPDWJ5yVx5BYMLV5AnB0o\nTM0W3WuRTG3UXKWzQMZtYopHuZ0iv9cmOQY/ERePASSsTGH6Zf8qWUbjMRkXaFET\nw9CjV2Xz0DcVqTMNOmyX1So1xBiFzS+TG2uZMdjzmKLzYRggeSjeaVw24Vxi1lic\nd49g+LF2WINV3GYn6z8MlxB1+y5RYyRfgzRq0gevNLW/8MKJT3AF1UZ9HJjJPgt9\nH6rII4VRknFXfeNnPZmEJmuvckWoe8F9Y2Cu3lNIb++GQDKBT7m/2wlXB48lDgPo\nyqIhUkldAgMBAAECggEAU0uZHhSvQacffY1BFhyc4wuqj4t3q9jnTDxrGSsk32Xc\n4BDJjIGIMB77p8gbpGZNE1wr7uUhPHaIcJqZ7swCIE51N3vv8JwTJ20A2pOi5OCx\n0aXwhayV7UUlByWwxpmb0W8OSBzTNnRcm3JUDFsoGeWxodKqBP4ugjCAGZfn3pEl\nroZjK1L5u80wpzieq0vErFL6r0Uh4Bm7VygOoVGkB0Jq94avgBK2xT7GVEu3TyKm\nT8kc30WDEgHsNrQnHzdlg3xeHk8frIocN1xc1TPeCEkti5O72E1Ma6CEI0TCXwlX\nFJsHRQsNEZswZS54u5tpfahp7W6ryHCzHnpRgZsSIQKBgQDZ4BFy746xFKzGfmGZ\n3M344lrqYguTv1MoytVjUV6iSJ2Mnecm+OBl1sVEHjtMa8bD9RFKzlHTeJQ1DKqx\nBdNtbHpgGu3M2sX1dTQKX8UbTFK44D7yAIFQwCn3aD9oi5LTrMItmpQvdnokToKR\npy6zNdWa7f2Z9V0nilWifRT/wwKBgQDPHzLT0AJ6N1mJ4whOav9f7hrzspRvYeEA\nMijFR3tUWJjjD6LrZ16EGQGEO49glXEUrHNDSMHJz0lJzg3wjTfasnhQ1c5CaUNO\nTDsVYjZxdYyExtvybRMkyByYwIuATBkW1ZJ8a3/jbzjFEHecZ2ultj+QwENZ2QUV\npZIpzUUgXwKBgQCeEJtYIUgKXI+EagfxEmo0GDQROxRfGj0AqTbqmQvo/HmgnKYo\ndgKGn6v54Vzv8nj/jXoAJXLj0uTjH89uImXjSwH1W1QOfOGFVIRuylA7n8Gb8sR3\n2bn3lZJctbra4/efrgQqBa1gSboPQQ4lEX8l8PaJMgP8gDAXEZtTCSAE9QKBgQCr\n/bdCRkfYXx/+LUXXgGhBq8I7vX4fI8MoW36Zm2shNlT2sCRUoEjPHsiwmpjL1izJ\nww4PwFoTkArGu9G9gDbyZyMb1P9rDGf0m76wWhbljnw6QbuhCsxLzdRZUAJHbmmj\nGYSDxuyy2sfkdHEusn6kY7tTIySKdnkPaab/CVKutwKBgQDLKMPfAEC7cSocbDvW\n3xXR4i3JflmaCOsgR8XhYtoNyPTC1nMtsc8R7zTrlB6YPg1xDmV+rzYthF0vxKFp\ncIgXQXFPtnAN8OgcIeEONi5kBovC/yqPkj7BbO3RvvHfTSrwYufSb0Ob6LpSo09W\nlvFU1vnTS1pWlrwTTG6qyQavjg==\n-----END PRIVATE KEY-----\n'
+    projectId: process.env.FANTAMORTO_PROJECT_ID,
+    clientEmail: process.env.FANTAMORTO_CLIENT_EMAIL,
+    privateKey: process.env.FANTAMORTO_PRIVATE_KEY
   })
 }
 var firebase_app = null
