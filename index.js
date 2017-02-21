@@ -5,9 +5,15 @@ const mailer      = require(path.resolve(__dirname, './mailer.js'))
 const db_client   = require(path.resolve(__dirname, './db.js'))
 
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+})
+
 app.set('port', (process.env.PORT || 5000))
 
-app.get('/request/:id', (req, res) => {
+app.post('/request/:id', (req, res, next) => {
   db_client
     .connection()
     .ref(`users/${req.params.id}`)

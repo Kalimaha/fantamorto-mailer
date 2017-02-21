@@ -22,7 +22,7 @@ const options = (id, name) => {
   return {
     receiver:   ADMIN,
     html:       text(id, name),
-    subject:    'Nuova Richiesta di Iscrizione',
+    subject:    `Richiesta di Iscrizione per ${name}`,
     senderName: 'FANTAMORTO'
   }
 }
