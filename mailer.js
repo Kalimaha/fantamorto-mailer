@@ -7,7 +7,7 @@ const text = (id, name) => `
   <hr>
   L'utente ${name} ha richiesto di iscriversi a FANTAMORTO.
   <br><br><br>
-  <a target="_blank" href="${FANTAMORTO_URL}/approve/${id}">
+  <a target="_blank" href="${FANTAMORTO_URL}/#!/approve/${id}">
     Gestisci Richiesta
   </a>
 `
